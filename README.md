@@ -8,6 +8,7 @@ DSbot or Drill Sergeant bot is a random exercise generator built with html, css,
 
 ![alt text](./DSbot.png)
 ![alt text](./DSbot-tablet.png)
+![alt text](./DSbot-web.png)
 
 ## API
 
