@@ -1,0 +1,239 @@
+:root {
+  font-size: calc(1em + 1vw);
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b39c4d;
+  font-family: 'Saira Stencil One', cursive;
+  color: #000;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(45deg, #1e2f23, #34623f);
+  border-bottom: 3px solid #000;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1em;
+}
+
+.logo {
+  font-size: 5rem;
+  margin-bottom: 0.1em;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-family: 'Special Elite', cursive;
+  color: #efcc01;
+  margin-bottom: 0.1em;
+}
+
+.content-container {
+  max-width: 80vw;
+  margin: 0 auto;
+  overflow: auto;
+  min-height: 26em;
+}
+
+.content-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 2em;
+}
+
+.content-container::-webkit-scrollbar {
+  display: none;
+}
+
+.intro-text {
+  font-family: 'Special Elite', cursive;
+  font-size: 2rem;
+  margin-bottom: 2em;
+}
+
+.go-btn {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+  background-color: #000;
+  border: 1px solid #34623f;
+  padding: 0.1em 1em;
+  border-radius: 0.5em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Special Elite', cursive;
+  font-size: 0.8rem;
+  background-color: #1e2f23;
+  height: 3em;
+  color: #efcc01;
+}
+
+/* Generator page */
+
+.saved-link a {
+  text-decoration: none;
+  color: #000;
+}
+
+.results-container {
+  font-family: 'Special Elite', cursive;
+}
+
+.results-container h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.results-container img {
+  width: 50%;
+}
+
+.exercise-container {
+  margin: 1em 0;
+}
+
+.select-musclegroup {
+  font-family: 'Special Elite', cursive;
+  border-radius: 0.5em;
+}
+
+.get-exercise,
+.save-button {
+  font-family: 'Saira Stencil One', cursive;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #000;
+  padding: 0.1em 1em;
+  border: none;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+
+.get-exercise:active,
+.save-button:active {
+  font-family: 'Saira Stencil One', cursive;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  background-color: #fff;
+  padding: 0.1em 1em;
+  border: 1px solid #000;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+
+label {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.8em;
+}
+
+/* saved page */
+
+.saved {
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted #000;
+}
+
+.clear-all {
+  font-family: 'Saira Stencil One', cursive;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #000;
+  padding: 0.1em 1em;
+  border: none;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+.clear-all:active {
+  font-family: 'Saira Stencil One', cursive;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  background-color: #fff;
+  padding: 0.1em 1em;
+  border: 1px solid #000;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+.delete-button {
+  font-family: 'Special Elite', cursive;
+  background-color: #000;
+  color: #fff;
+  font-weight: 900;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 0.5em 0;
+  padding: 0.3em 0.5em;
+}
+
+/* page transitions 
+https://kasper.io/How-to-create-transition-effect-between-pages/
+*/
+
+.animate-in {
+  -webkit-animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-out {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

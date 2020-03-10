@@ -13,12 +13,14 @@
     />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>DSbot</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="./js/saved.js"></script>
+    <title>DSbot - Generator</title>
   </head>
   <body class="animate-in">
     <header>
       <h1 class="logo"><a href="index.html">DSbot</a></h1>
-      <h2 class="subtitle">Welcome to bootcamp!</h2>
+      <h2 class="subtitle">You like these huh?</h2>
       <nav class="navbar">
         <a href="./index.html">Home</a>
         <a href="./generator.html">Generator</a>
@@ -26,10 +28,8 @@
       </nav>
     </header>
     <main class="content-container">
-      <p class="intro-text">
-        Can't decide what to do? Hit the button below and lets get to work!
-      </p>
-      <a class="go-btn" href="generator.html">Lets GO!</a>
+      <section class="results-container"></section>
+      <button class="clear-all">Clear Saved</button>
     </main>
     <footer>
       <p>Jose Ferreira &copy; 2020</p>
