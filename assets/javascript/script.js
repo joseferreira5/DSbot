@@ -4,7 +4,11 @@ const button = document.querySelector('button');
 const section = document.querySelector('section');
 const checkbox = document.querySelector('#equipment');
 const introText = document.querySelector('.intro-text');
-const savedItems = [];
+let savedItems = [];
+
+if (JSON.parse(localStorage.getItem('savedExercises')) !== null) {
+  savedItems = JSON.parse(localStorage.getItem('savedExercises'));
+}
 
 window.onload = async function() {
   const res = await axios.get(`${baseUrl}api/v2/exercisecategory/?format=json`);
@@ -49,6 +53,7 @@ button.addEventListener('click', async () => {
     if (!savedItems.includes(randomExercise)) {
       savedItems.push(randomExercise);
       saveExercise(savedItems);
+      saveBtn.innerText = 'Saved!';
     }
   });
   container.appendChild(saveBtn);
@@ -58,7 +63,9 @@ button.addEventListener('click', async () => {
 
 // Save Exercises
 function saveExercise(arr) {
-  localStorage.setItem('savedExercises', JSON.stringify(arr));
+  if (arr.length > 0) {
+    localStorage.setItem('savedExercises', JSON.stringify(arr));
+  }
 }
 
 // Helper functions

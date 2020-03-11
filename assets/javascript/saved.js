@@ -3,7 +3,6 @@ const clearAll = document.querySelector('.clear-all');
 
 window.onload = function() {
   const savedExercises = JSON.parse(localStorage.getItem('savedExercises'));
-  console.log(savedExercises);
 
   if (savedExercises) {
     savedExercises.forEach(e => {
@@ -19,6 +18,22 @@ window.onload = function() {
         const deleteBtn = document.createElement('button');
         deleteBtn.innerText = 'X';
         deleteBtn.setAttribute('class', 'delete-button');
+        deleteBtn.addEventListener('click', () => {
+          container.style.display = 'none';
+          savedExercises.splice(e, 1);
+
+          if (savedExercises.length > 0) {
+            localStorage.setItem(
+              'savedExercises',
+              JSON.stringify(savedExercises)
+            );
+          } else {
+            savedContainer.innerHTML = `<p>All gone! Let's get back to work!</p>`;
+            clearAll.style.display = 'none';
+            localStorage.removeItem('savedExercises');
+          }
+        });
+
         container.appendChild(deleteBtn);
       }
 
@@ -33,5 +48,5 @@ window.onload = function() {
 clearAll.addEventListener('click', () => {
   savedContainer.innerHTML = `<p>All gone! Let's get back to work!</p>`;
   clearAll.style.display = 'none';
-  localStorage.clear();
+  localStorage.removeItem('savedExercises');
 });

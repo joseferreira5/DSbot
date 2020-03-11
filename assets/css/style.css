@@ -37,6 +37,10 @@ header {
   font-size: 1em;
 }
 
+.navbar .active {
+  color: gray;
+}
+
 .logo {
   font-size: 5rem;
   margin-bottom: 0.1em;
@@ -60,7 +64,7 @@ header {
   max-width: 80vw;
   margin: 0 auto;
   overflow: auto;
-  min-height: 26em;
+  min-height: 24em;
 }
 
 .content-form {
