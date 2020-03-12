@@ -18,29 +18,31 @@
     <title>DSbot - Generator</title>
   </head>
   <body class="animate-in">
-    <header>
-      <h1 class="logo"><a href="index.html">DSbot</a></h1>
-      <h2 class="subtitle">Hit the dropdown!</h2>
-      <nav class="navbar">
-        <a href="./index.html">Home</a>
-        <a href="./generator.html" class="active">Generator</a>
-        <a href="./saved.html">Saved</a>
-      </nav>
-    </header>
-    <main class="content-container">
-      <div class="content-form">
-        <select class="select-musclegroup"></select>
-        <label for="checkbox"
-          ><input type="checkbox" id="equipment" name="equipment" /> No
-          equipment</label
-        >
-        <button class="get-exercise">Get Exercise</button>
-      </div>
-      <section class="results-container"></section>
-    </main>
-    <footer>
-      <p>Jose Ferreira &copy; 2020</p>
-    </footer>
+    <div class="main-container">
+      <header>
+        <h1 class="logo"><a href="index.html">DSbot</a></h1>
+        <h2 class="subtitle">Hit the dropdown!</h2>
+        <nav class="navbar">
+          <a href="./index.html">Home</a>
+          <a href="./generator.html" class="active">Generator</a>
+          <a href="./saved.html">Saved</a>
+        </nav>
+      </header>
+      <main class="content-container">
+        <div class="content-form">
+          <select class="select-musclegroup"></select>
+          <label for="checkbox"
+            ><input type="checkbox" id="equipment" name="equipment" /> No
+            equipment</label
+          >
+          <button class="get-exercise">Get Exercise</button>
+        </div>
+        <section class="results-container"></section>
+      </main>
+      <footer>
+        <p>Jose Ferreira &copy; 2020</p>
+      </footer>
+    </div>
     <script>
       window.addEventListener('beforeunload', function() {
         document.body.classList.add('animate-out');

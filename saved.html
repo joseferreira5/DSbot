@@ -18,22 +18,24 @@
     <title>DSbot - Generator</title>
   </head>
   <body class="animate-in">
-    <header>
-      <h1 class="logo"><a href="index.html">DSbot</a></h1>
-      <h2 class="subtitle">You like these huh?</h2>
-      <nav class="navbar">
-        <a href="./index.html">Home</a>
-        <a href="./generator.html">Generator</a>
-        <a href="./saved.html" class="active">Saved</a>
-      </nav>
-    </header>
-    <main class="content-container">
-      <section class="results-container"></section>
-      <button class="clear-all">Clear Saved</button>
-    </main>
-    <footer>
-      <p>Jose Ferreira &copy; 2020</p>
-    </footer>
+    <div class="main-container">
+      <header>
+        <h1 class="logo"><a href="index.html">DSbot</a></h1>
+        <h2 class="subtitle">You like these huh?</h2>
+        <nav class="navbar">
+          <a href="./index.html">Home</a>
+          <a href="./generator.html">Generator</a>
+          <a href="./saved.html" class="active">Saved</a>
+        </nav>
+      </header>
+      <main class="content-container">
+        <section class="results-container"></section>
+        <button class="clear-all">Clear Saved</button>
+      </main>
+      <footer>
+        <p>Jose Ferreira &copy; 2020</p>
+      </footer>
+    </div>
     <script>
       window.addEventListener('beforeunload', function() {
         document.body.classList.add('animate-out');

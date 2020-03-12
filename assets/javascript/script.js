@@ -32,7 +32,7 @@ button.addEventListener('click', async () => {
   const res = await axios.get(
     `${baseUrl}api/v2/exercise/?language=2&category=${userOptions}&status=2&limit=100`
   );
-  console.log(res);
+
   section.innerHTML = ``;
 
   const randomExercise = getRandom(res.data.results);
@@ -48,14 +48,21 @@ button.addEventListener('click', async () => {
 
   const saveBtn = document.createElement('button');
   saveBtn.setAttribute('class', 'save-button');
-  saveBtn.innerText = 'Save';
+
+  if (isSaved(savedItems, randomExercise).length > 0) {
+    saveBtn.innerText = 'Saved';
+    saveBtn.disabled = 'true';
+  } else {
+    saveBtn.innerText = 'Save';
+  }
+
   saveBtn.addEventListener('click', () => {
-    if (!savedItems.includes(randomExercise)) {
-      savedItems.push(randomExercise);
-      saveExercise(savedItems);
-      saveBtn.innerText = 'Saved!';
-    }
+    savedItems.push(randomExercise);
+    saveExercise(savedItems);
+    saveBtn.innerText = 'Saved!';
+    saveBtn.disabled = 'true';
   });
+
   container.appendChild(saveBtn);
 
   section.appendChild(container);
@@ -72,6 +79,11 @@ function saveExercise(arr) {
 function getRandom(arr) {
   const randomExercise = arr[Math.floor(Math.random() * arr.length)];
   return randomExercise;
+}
+
+function isSaved(savedItems, randomExercise) {
+  const found = savedItems.filter(saved => saved.id === randomExercise.id);
+  return found;
 }
 
 async function getImage(id, container) {
