@@ -33,10 +33,8 @@ window.onload = function() {
             localStorage.removeItem('savedExercises');
           }
         });
-
         container.appendChild(deleteBtn);
       }
-
       savedContainer.appendChild(container);
     });
   } else {

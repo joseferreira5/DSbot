@@ -11,9 +11,38 @@ if (JSON.parse(localStorage.getItem('savedExercises')) !== null) {
 }
 
 window.onload = async function() {
-  const res = await axios.get(`${baseUrl}api/v2/exercisecategory/?format=json`);
+  const exerciseCategories = [
+    {
+      id: 10,
+      name: 'Abs'
+    },
+    {
+      id: 8,
+      name: 'Arms'
+    },
+    {
+      id: 12,
+      name: 'Back'
+    },
+    {
+      id: 14,
+      name: 'Calves'
+    },
+    {
+      id: 11,
+      name: 'Chest'
+    },
+    {
+      id: 9,
+      name: 'Legs'
+    },
+    {
+      id: 13,
+      name: 'Shoulders'
+    }
+  ];
 
-  res.data.results.forEach(e => {
+  exerciseCategories.forEach(e => {
     const option = document.createElement('option');
 
     option.innerText = e.name;
@@ -35,10 +64,14 @@ button.addEventListener('click', async () => {
 
   section.innerHTML = ``;
 
+  if (res.data.count === 0) {
+    section.innerHTML = `<p style="margin-top: 3em;">I don't have anything for you... Don't just stare at me, pick something else.</p>`;
+    return;
+  }
+
   const randomExercise = getRandom(res.data.results);
   const container = document.createElement('div');
   container.setAttribute('class', 'exercise-container');
-
   const title = document.createElement('h3');
   title.innerText = randomExercise.name;
   container.appendChild(title);
@@ -64,7 +97,6 @@ button.addEventListener('click', async () => {
   });
 
   container.appendChild(saveBtn);
-
   section.appendChild(container);
 });
 

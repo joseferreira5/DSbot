@@ -13,6 +13,7 @@ html,
 body {
   height: 100%;
   position: relative;
+  overscroll-behavior: contain;
 }
 
 body {
@@ -56,7 +57,7 @@ header {
 }
 
 .logo {
-  font-size: 5rem;
+  font-size: 4rem;
   margin-bottom: 0.1em;
 }
 
@@ -68,7 +69,7 @@ header {
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Special Elite', cursive;
   color: #efcc01;
   margin-bottom: 0.1em;
