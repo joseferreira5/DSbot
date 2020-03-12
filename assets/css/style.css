@@ -1,6 +1,7 @@
 :root {
   font-size: calc(1em + 1vw);
   box-sizing: border-box;
+  background-color: #1e2f23;
 }
 
 *,
