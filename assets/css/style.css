@@ -13,7 +13,7 @@ html,
 body {
   height: 100%;
   position: relative;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
 }
 
 body {
