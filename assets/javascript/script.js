@@ -10,7 +10,7 @@ if (JSON.parse(localStorage.getItem('savedExercises')) !== null) {
   savedItems = JSON.parse(localStorage.getItem('savedExercises'));
 }
 
-window.onload = async function() {
+window.onload = function() {
   const exerciseCategories = [
     {
       id: 10,
@@ -42,11 +42,11 @@ window.onload = async function() {
     }
   ];
 
-  exerciseCategories.forEach(e => {
+  exerciseCategories.forEach(category => {
     const option = document.createElement('option');
 
-    option.innerText = e.name;
-    option.value = e.id;
+    option.innerText = category.name;
+    option.value = category.id;
     select.appendChild(option);
   });
 };
@@ -100,13 +100,6 @@ button.addEventListener('click', async () => {
   section.appendChild(container);
 });
 
-// Save Exercises
-function saveExercise(arr) {
-  if (arr.length > 0) {
-    localStorage.setItem('savedExercises', JSON.stringify(arr));
-  }
-}
-
 // Helper functions
 function getRandom(arr) {
   const randomExercise = arr[Math.floor(Math.random() * arr.length)];
@@ -116,6 +109,12 @@ function getRandom(arr) {
 function isSaved(savedItems, randomExercise) {
   const found = savedItems.filter(saved => saved.id === randomExercise.id);
   return found;
+}
+
+function saveExercise(arr) {
+  if (arr.length > 0) {
+    localStorage.setItem('savedExercises', JSON.stringify(arr));
+  }
 }
 
 async function getImage(id, container) {
@@ -131,10 +130,3 @@ async function getImage(id, container) {
     return;
   }
 }
-
-const intros = [
-  "I'm a robot Drill Sergeant, let me tell you what you're about to do!",
-  'Not sure what to do next? Well I got an idea for you!',
-  '',
-  ''
-];
